@@ -12,9 +12,10 @@ struct DSU {
 	void union_set (int a, int b) {
 		a = find_root(a);
 		b = find_root(b);
-		if (a != b)
+		if (a != b) {
 			if (rank[a] < rank[b]) swap (a, b);
 		parent[b] = a;
 		if (rank[a] == rank[b]) rank[a]++;
-	}
+        }
+    }
 };
