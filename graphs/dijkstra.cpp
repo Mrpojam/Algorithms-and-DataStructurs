@@ -17,7 +17,6 @@ void read_graph() {
 	for (int i = 0; i < e; i++) {
 		int u, v, w;
 		cin >> u >> v >> w;
-		dist[i] = inf;
 		adj[u].push_back({v, w});
 		adj[v].push_back({u, w});
 	}
@@ -31,6 +30,8 @@ void update (pii node, pii u) {
 }
 
 void dijkstra (int v) {
+	for (int i = 1; i <= n; i++)
+		dist[i] = inf;
 	dist[v] = 0;
 	s.insert({0, v});
 	while (!s.empty()) {
