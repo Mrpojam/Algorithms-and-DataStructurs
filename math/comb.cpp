@@ -13,9 +13,10 @@ void _init_ () {
 
 int main () {
 	_init_ ();
-	while (true) {
-		int n, r;
-		cin >> n >> r;
-		cout << c[n][r] << endl;
+	cin >> n;
+	for (int i = 0; i <= n; i++) {
+		for (int j = 0; j <= i+1; j++)
+			cout << c[i][j] << ' ';
+		cout << endl;
 	}
 }
